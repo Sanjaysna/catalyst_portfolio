@@ -25,9 +25,6 @@ Because PDF.js loads resume PDFs dynamically via `fetch` / `XMLHttpRequest` and 
 
 ### Option 1: Python HTTP Server (Built-in)
 ```bash
-# Navigate to the project directory
-cd catalyst
-
 # Start local server on port 8000 (or any free port)
 python -m http.server 8000
 ```
@@ -38,7 +35,6 @@ Right-click `index.html` inside VS Code and choose **"Open with Live Server"**.
 
 ### Option 3: Node.js `serve` / `npx`
 ```bash
-cd catalyst
 npx -y serve .
 ```
 
@@ -46,12 +42,12 @@ npx -y serve .
 
 ## 👥 How to Add, Edit, or Replace Resumes
 
-All member data and resume mappings are centralized in a single source of truth: [`js/members.js`](file:///c:/Users/sanjay/OneDrive/Desktop/catalystwebsite/catalyst/js/members.js). The UI is completely data-driven and automatically adapts to any edits.
+All member data and resume mappings are centralized in a single source of truth: [`js/members.js`](file:///c:/Users/sanjay/OneDrive/Desktop/catalystwebsite/js/members.js). The UI is completely data-driven and automatically adapts to any edits.
 
 ### 1. Adding or Replacing a Member's Resume PDF
 1. **Drop the PDF into the `/assets/` folder** (the project root folder, alongside the member photos).
    - *Rule:* Keep the exact filename as provided (spaces, parentheses, and underscores are fully supported).
-2. **Open [`js/members.js`](file:///c:/Users/sanjay/OneDrive/Desktop/catalystwebsite/catalyst/js/members.js)** and locate the member's object by their slug.
+2. **Open [`js/members.js`](file:///c:/Users/sanjay/OneDrive/Desktop/catalystwebsite/js/members.js)** and locate the member's object by their slug.
 3. **Set the `resumePdf` property** to `"assets/<exact filename>"`:
    ```javascript
    {
@@ -71,7 +67,7 @@ Because portraits vary in height, each member has an `objectPosition` property (
 ## 🎨 How to Swap Colors & Branding
 
 ### 1. Color Palette Tokens
-All colors are defined via CSS Custom Properties in [`css/tokens.css`](file:///c:/Users/sanjay/OneDrive/Desktop/catalystwebsite/catalyst/css/tokens.css):
+All colors are defined via CSS Custom Properties in [`css/tokens.css`](file:///c:/Users/sanjay/OneDrive/Desktop/catalystwebsite/css/tokens.css):
 ```css
 :root {
   --lavender: #D0C4FB;     /* Page background & Top Window Chrome */
@@ -87,7 +83,7 @@ All colors are defined via CSS Custom Properties in [`css/tokens.css`](file:///c
 Update any hex code to instantly transform the visual theme across the entire application.
 
 ### 2. Official Brand Logo & Assets
-The official CATALYST logo assets reside in [`assets/brand/`](file:///c:/Users/sanjay/OneDrive/Desktop/catalystwebsite/catalyst/assets/brand/):
+The official CATALYST logo assets reside in [`assets/brand/`](file:///c:/Users/sanjay/OneDrive/Desktop/catalystwebsite/assets/brand/):
 - `logo-full.png` / `logo-full@2x.png` (800px and 1600px full logo on clean white background).
 - `logo-mark.png` / `logo-mark-256.png` / `logo-mark-512.png` (isolated "C + arrow" mark for nav and mobile headers).
 - Complete favicon suite (`favicon-32x32.png`, `apple-touch-icon.png`, `favicon-512x512.png`, `favicon.ico`).
@@ -101,14 +97,14 @@ All logo presentations use the retro sticker card treatment (thick black outline
 The website has zero build steps and can be hosted instantly on any static web host.
 
 ### Deploying to GitHub Pages
-1. Push this folder to a GitHub repository.
+1. Push this repository to GitHub.
 2. In your repository, go to **Settings > Pages**.
 3. Under **Build and deployment > Source**, select `Deploy from a branch`.
-4. Choose `main` branch and `/ (root)` folder (or `/catalyst`), then click **Save**.
+4. Choose `main` branch and `/ (root)` folder, then click **Save**.
 5. Your live site will be ready within 60 seconds at `https://<username>.github.io/<repo-name>/`.
 
 ### Deploying to Netlify / Vercel
-- **Netlify:** Drag and drop the `catalyst` folder directly into [Netlify Drop](https://app.netlify.com/drop).
+- **Netlify:** Drag and drop this repository folder directly into [Netlify Drop](https://app.netlify.com/drop).
 - **Vercel:** Run `npx vercel` inside the folder and follow the CLI prompt.
 
 ---

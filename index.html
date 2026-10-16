@@ -2,10 +2,383 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=catalyst/index.html">
-  <title>Redirecting to CATALYST...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CATALYST // We Learn, We Lead And We Deliver</title>
+  <meta name="description" content="We are CATALYST — a team that believes success is not measured by scores alone, but by the willingness to participate, the courage to try, and the ability to learn from every experience.">
+  <meta name="theme-color" content="#D0C4FB">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CATALYST // We Learn, We Lead And We Deliver">
+  <meta property="og:description" content="Official portfolio of CATALYST — 8-member soft-skills workshop team. We Learn, We Lead And We Deliver.">
+  <meta property="og:image" content="assets/brand/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CATALYST // We Learn, We Lead And We Deliver">
+  <meta name="twitter:description" content="Official portfolio of CATALYST — 8-member soft-skills workshop team. We Learn, We Lead And We Deliver.">
+  <meta name="twitter:image" content="assets/brand/og-image.png">
+
+  <!-- Favicon Set from Brand Mark -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32x32.png">
+  <link rel="icon" type="image/x-icon" href="assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon.png">
+
+  <!-- Google Fonts: Bungee, Shrikhand, Damion, Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Damion&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Shrikhand&display=swap" rel="stylesheet">
+
+  <!-- Modular Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css?v=7">
+  <link rel="stylesheet" href="css/base.css?v=7">
+  <link rel="stylesheet" href="css/components.css?v=7">
+  <link rel="stylesheet" href="css/sections.css?v=7">
+  <link rel="stylesheet" href="css/print.css?v=7" media="print">
 </head>
 <body>
-  <p>Redirecting to <a href="catalyst/index.html">CATALYST Portfolio</a>...</p>
+
+  <!-- Tactile Film Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- SVG Sprite Library for Handcrafted Retro Stickers & Icons -->
+  <svg style="display: none;" aria-hidden="true">
+    <defs>
+
+      <!-- Spiky 16-point Starburst Badge -->
+      <symbol id="sticker-starburst" viewBox="0 0 100 100">
+        <polygon points="50,0 61,24 85,15 76,39 100,50 76,61 85,85 61,76 50,100 39,76 15,85 24,61 0,50 24,39 15,15 39,24" fill="#FFD21F" stroke="#111111" stroke-width="4" stroke-linejoin="round"/>
+      </symbol>
+
+      <!-- Peeling Smiley Face -->
+      <symbol id="sticker-smiley" viewBox="0 0 100 100">
+        <!-- Peeling Back Shadow -->
+        <path d="M10 50 A40 40 0 1 0 85 30 L65 15 A40 40 0 0 0 10 50 Z" fill="#111111"/>
+        <!-- Main Face -->
+        <circle cx="50" cy="50" r="42" fill="#FFD21F" stroke="#111111" stroke-width="4"/>
+        <!-- Eyes -->
+        <ellipse cx="37" cy="40" rx="4.5" ry="8" fill="#111111"/>
+        <ellipse cx="63" cy="40" rx="4.5" ry="8" fill="#111111"/>
+        <!-- Big Smile -->
+        <path d="M30 58 Q50 82 70 58" fill="none" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+        <!-- Peeling fold on bottom-right -->
+        <path d="M78 78 L92 60 L60 92 Z" fill="#E5BD1B" stroke="#111111" stroke-width="3"/>
+      </symbol>
+
+      <!-- Rainbow Arc Sticker -->
+      <symbol id="sticker-rainbow" viewBox="0 0 120 70">
+        <path d="M10 65 A50 50 0 0 1 110 65" fill="none" stroke="#111111" stroke-width="24" stroke-linecap="round"/>
+        <path d="M10 65 A50 50 0 0 1 110 65" fill="none" stroke="#FF7BAC" stroke-width="18" stroke-linecap="round"/>
+        <path d="M16 65 A44 44 0 0 1 104 65" fill="none" stroke="#FFD21F" stroke-width="12" stroke-linecap="round"/>
+        <path d="M22 65 A38 38 0 0 1 98 65" fill="none" stroke="#4DC4E6" stroke-width="6" stroke-linecap="round"/>
+        <path d="M26 65 A34 34 0 0 1 94 65" fill="none" stroke="#A8D98B" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+
+      <!-- 4-point Sparkle Star -->
+      <symbol id="sticker-sparkle" viewBox="0 0 40 40">
+        <path d="M20 0 Q20 20 40 20 Q20 20 20 40 Q20 20 0 20 Q20 20 20 0 Z" fill="#FFD21F" stroke="#111111" stroke-width="3"/>
+      </symbol>
+
+      <!-- Lightning Bolt -->
+      <symbol id="sticker-lightning" viewBox="0 0 40 60">
+        <polygon points="22,0 0,34 18,34 14,60 38,22 20,22" fill="#FFD21F" stroke="#111111" stroke-width="4" stroke-linejoin="round"/>
+      </symbol>
+
+      <!-- Pixel Mouse Cursor -->
+      <symbol id="sticker-cursor" viewBox="0 0 24 32">
+        <polygon points="0,0 0,26 6,20 12,31 16,29 10,18 19,18" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+      </symbol>
+
+      <!-- Social & Navigation Icons -->
+      <symbol id="icon-linkedin" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+      </symbol>
+
+      <symbol id="icon-github" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+      </symbol>
+
+      <symbol id="icon-mail" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5l-8-5V6l8 5l8-5v2z"/>
+      </symbol>
+
+      <symbol id="icon-workshop" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72L5.18 9L12 5.28L18.82 9zM17 15.99l-5 2.73l-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Left-Edge Floating Black Pill Social Rail -->
+  <aside class="social-rail" aria-label="Social and Workshop Links">
+    <a href="#contact" class="social-rail-item" title="Team Email" aria-label="Contact CATALYST Team via Email">
+      <svg><use href="#icon-mail"/></svg>
+    </a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-rail-item" title="LinkedIn" aria-label="CATALYST on LinkedIn">
+      <svg><use href="#icon-linkedin"/></svg>
+    </a>
+    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-rail-item" title="GitHub" aria-label="CATALYST on GitHub">
+      <svg><use href="#icon-github"/></svg>
+    </a>
+    <a href="#about" class="social-rail-item" title="Workshop Learnings" aria-label="About the Soft-Skills Workshop">
+      <svg><use href="#icon-workshop"/></svg>
+    </a>
+  </aside>
+
+  <!-- Right-Edge Floating Pagination Section Indicator -->
+  <nav class="section-dots" aria-label="Page section navigation">
+    <button type="button" class="section-dot-item active" data-section="home" title="Hero Section" aria-label="Scroll to Hero"></button>
+    <button type="button" class="section-dot-item" data-section="about" title="About Workshop" aria-label="Scroll to About"></button>
+    <button type="button" class="section-dot-item" data-section="team" title="Team Roster" aria-label="Scroll to Team"></button>
+    <button type="button" class="section-dot-item" data-section="contact" title="Footer & Contact" aria-label="Scroll to Footer"></button>
+  </nav>
+
+  <!-- RETRO BROWSER WINDOW SHELL -->
+  <div class="retro-window-shell">
+
+    <!-- Top Window Chrome / Sticky Navigation Bar -->
+    <header class="window-chrome-bar">
+      <!-- Left: Window Dots + CATALYST Emblem & Brand -->
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <div class="window-controls-group" aria-hidden="true">
+          <span class="window-dot dot-pink"></span>
+          <span class="window-dot dot-yellow"></span>
+          <span class="window-dot dot-green"></span>
+        </div>
+        <a href="#home" class="nav-brand-group" aria-label="CATALYST Home">
+          <span class="nav-brand-badge" aria-hidden="true">
+            <img src="assets/brand/logo-mark-256.png" srcset="assets/brand/logo-mark-256.png 1x, assets/brand/logo-mark-512.png 2x" alt="CATALYST logo" width="28" height="28" loading="eager" decoding="async" class="nav-brand-logo-img">
+          </span>
+          <span>CATALYST</span>
+        </a>
+      </div>
+
+      <!-- Center: Semantic Nav Links (Desktop) -->
+      <nav class="nav-links-desktop" aria-label="Main Navigation">
+        <a href="#home" class="nav-link-item active" data-section="home">Home</a>
+        <a href="#about" class="nav-link-item" data-section="about">About</a>
+        <a href="#team" class="nav-link-item" data-section="team">Team</a>
+        <a href="#contact" class="nav-link-item" data-section="contact">Contact</a>
+      </nav>
+
+      <!-- Right: Team Size Badge & Mobile Hamburger -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <div class="nav-badge-pill">
+          <span aria-hidden="true"></span>
+          Team of 8
+        </div>
+        <button type="button" class="nav-mobile-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Drawer -->
+      <div class="mobile-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation Drawer">
+        <a href="#home" class="nav-link-item" data-section="home">Home</a>
+        <a href="#about" class="nav-link-item" data-section="about">About Workshop</a>
+        <a href="#team" class="nav-link-item" data-section="team">The Team (8)</a>
+        <a href="#contact" class="nav-link-item" data-section="contact">Contact & Social</a>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT LANDMARK -->
+    <main>
+
+      <!-- 1. HERO SECTION -->
+      <section id="home" class="hero-section" aria-labelledby="hero-heading">
+        <!-- Floating Stickers in Hero Background -->
+        <svg class="sticker sticker-smiley" style="top: 15px; left: 8%;" aria-hidden="true"><use href="#sticker-smiley"/></svg>
+        <svg class="sticker sticker-rainbow" style="top: -25px; right: 18%;" aria-hidden="true"><use href="#sticker-rainbow"/></svg>
+        <svg class="sticker sticker-sparkle" style="top: 45%; left: 48%;" aria-hidden="true"><use href="#sticker-sparkle"/></svg>
+        <svg class="sticker sticker-lightning" style="bottom: 25px; left: 12%;" aria-hidden="true"><use href="#sticker-lightning"/></svg>
+
+        <!-- Left Column: Headline, Slogan & Mission -->
+        <div class="hero-content">
+          <span class="hero-kicker">Meet the team</span>
+          <h1 id="hero-heading" class="hero-title">CATALYST</h1>
+
+          <div class="hero-slogan-pill-wrapper">
+            <div class="hero-slogan-pill">
+              <span>We Learn, We Lead And We Deliver</span>
+            </div>
+            <!-- Pixel Cursor Sticker pointing at slogan pill edge -->
+            <svg class="sticker-cursor hero-slogan-cursor" aria-hidden="true"><use href="#sticker-cursor"/></svg>
+          </div>
+
+          <div class="hero-description-wrapper">
+            <p class="hero-description">
+              We are CATALYST — a team that believes success is not measured by scores alone, but by the <span class="marker-underline">willingness to participate</span>, the <span class="marker-underline">courage to try</span>, and the <span class="marker-underline">ability to learn</span> from every experience.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#team" class="btn-retro btn-cyan">
+              <span>Meet the Team</span>
+              <span aria-hidden="true">↓</span>
+            </a>
+            <a href="#about" class="btn-retro btn-white">
+              <span>Our Learnings</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Retro Offset Window Composition with Logo Sticker Card -->
+        <div class="hero-visual-frame">
+          <div class="hero-window-backdrop">
+            <!-- Overlapping Corner Stickers (Accenting card without covering logo) -->
+            <!-- Top-Left: Peeling Smiley -->
+            <svg class="hero-smiley-pos" aria-hidden="true"><use href="#sticker-smiley"/></svg>
+
+            <!-- Top-Right: Spiky Starburst 8 MEMBERS Badge -->
+            <div class="starburst-badge hero-starburst-pos" aria-label="8 Members Badge">
+              <svg><use href="#sticker-starburst"/></svg>
+              <span class="starburst-text">8 MEMBERS</span>
+            </div>
+
+            <!-- Bottom-Left: Lightning Bolt -->
+            <svg class="hero-lightning-pos" aria-hidden="true"><use href="#sticker-lightning"/></svg>
+
+            <!-- Mid-Right: 4-Point Sparkle Star -->
+            <svg class="hero-sparkle-pos" aria-hidden="true"><use href="#sticker-sparkle"/></svg>
+
+            <!-- Main White Rounded-Square Logo Sticker Card -->
+            <div class="hero-logo-sticker-card" tabindex="0" role="img" aria-label="Official CATALYST Logo sticker">
+              <img 
+                src="assets/brand/logo-full.png" 
+                srcset="assets/brand/logo-full.png 1x, assets/brand/logo-full@2x.png 2x" 
+                alt="CATALYST logo" 
+                width="320" 
+                height="320" 
+                loading="eager" 
+                decoding="async" 
+                class="hero-logo-img"
+              />
+              <!-- Twinkling Sparkle near Arrow Tip -->
+              <span class="hero-arrow-sparkle" aria-hidden="true">✦</span>
+            </div>
+
+            <!-- Tilted Ellipse Sticker across bottom edge -->
+            <div class="ellipse-sticker hero-ellipse-pos">TEAM CATALYST</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. ABOUT STRIP (3-Card Slogan Verb Strip) -->
+      <section id="about" class="about-strip-section" aria-labelledby="about-heading">
+        <div class="section-header-centered">
+          <span class="section-kicker">Our Philosophy</span>
+          <h2 id="about-heading" class="section-title">What Drives Us</h2>
+          <p style="font-size: var(--text-sm); color: #333;">Rooted in mutual growth, resilience, and actionable soft skills from our workshop journey.</p>
+        </div>
+
+        <div class="about-cards-grid">
+          <!-- Card 1: We Learn -->
+          <article class="about-card">
+            <span class="about-card-badge">01 // DISCOVER</span>
+            <h3 class="about-card-title">We Learn</h3>
+            <p class="about-card-desc">
+              Every simulation, peer feedback round, and case study is an opportunity to expand our horizons. We listen with intent and adapt with humility. [Add text]
+            </p>
+          </article>
+
+          <!-- Card 2: We Lead -->
+          <article class="about-card">
+            <span class="about-card-badge">02 // INITIATE</span>
+            <h3 class="about-card-title">We Lead</h3>
+            <p class="about-card-desc">
+              Leadership is taking initiative, showing empathy, and empowering every teammate to voice their perspective without hesitation. [Add text]
+            </p>
+          </article>
+
+          <!-- Card 3: We Deliver -->
+          <article class="about-card">
+            <span class="about-card-badge">03 // EXECUTE</span>
+            <h3 class="about-card-title">We Deliver</h3>
+            <p class="about-card-desc">
+              From concepts to impactful presentations and tangible team outcomes, we turn collective ideas into dependable reality. [Add text]
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. TEAM SECTION (Numbered 4x2 Grid) -->
+      <section id="team" class="team-section" aria-labelledby="team-heading">
+        <svg class="sticker sticker-sparkle" style="top: 20px; right: 6%;" aria-hidden="true"><use href="#sticker-sparkle"/></svg>
+        <svg class="sticker sticker-lightning" style="bottom: 40px; right: 3%;" aria-hidden="true"><use href="#sticker-lightning"/></svg>
+
+        <div class="section-header-centered">
+          <span class="section-kicker">The Roster</span>
+          <h2 id="team-heading" class="section-title">Meet CATALYST</h2>
+          <p style="font-size: var(--text-sm); color: #333;">
+            Eight distinct perspectives united by one common standard of collaboration. Click any member to explore their resume and workshop takeaways.
+          </p>
+        </div>
+
+        <!-- 8 Member Cards Rendered Data-Driven by render.js -->
+        <div class="team-grid" id="team-grid" aria-label="CATALYST Members Grid">
+          <!-- Cards dynamically injected from members.js -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 4. FOOTER & CONTACT -->
+    <footer id="contact" class="site-footer" aria-labelledby="footer-heading">
+      <div class="footer-top-grid">
+        <!-- Brand & Slogan -->
+        <div class="footer-brand">
+          <div class="footer-brand-header">
+            <div class="footer-logo-sticker">
+              <img src="assets/brand/logo-full.png" srcset="assets/brand/logo-full.png 1x, assets/brand/logo-full@2x.png 2x" alt="CATALYST logo" width="140" height="140" loading="lazy" decoding="async" class="footer-logo-img">
+            </div>
+            <div>
+              <h3 id="footer-heading" class="footer-brand-title">CATALYST</h3>
+              <p class="footer-slogan">"We Learn, We Lead And We Deliver"</p>
+            </div>
+          </div>
+          <p style="font-size: var(--text-xs); line-height: 1.6; color: #333; max-width: 38ch; margin-top: 0.5rem;">
+            Soft-skills workshop portfolio showcase. Designed with love, retro-pop nostalgia, and high-performance vanilla engineering.
+          </p>
+        </div>
+
+        <!-- Quick Member Roster Links -->
+        <div>
+          <h4 style="font-family: var(--font-headline); font-size: 0.95rem; margin-bottom: 0.85rem;">TEAM MEMBERS</h4>
+          <ul class="footer-roster-list">
+            <li><a href="resume.html?m=ashil" class="footer-roster-link">01. Ashil Anto</a></li>
+            <li><a href="resume.html?m=anagha" class="footer-roster-link">02. Anagha Ajidev</a></li>
+            <li><a href="resume.html?m=sanjay" class="footer-roster-link">03. Sanjay S Nair</a></li>
+            <li><a href="resume.html?m=anu" class="footer-roster-link">04. Anu Mariya V.</a></li>
+            <li><a href="resume.html?m=aflah" class="footer-roster-link">05. Aflah Mujeeb</a></li>
+            <li><a href="resume.html?m=siva" class="footer-roster-link">06. Sivaganga S Nair</a></li>
+            <li><a href="resume.html?m=visakh" class="footer-roster-link">07. Visakh Sirendran</a></li>
+            <li><a href="resume.html?m=avani" class="footer-roster-link">08. Avany C Muralidharan</a></li>
+          </ul>
+        </div>
+
+        <!-- Workshop Details & Action -->
+        <div>
+          <h4 style="font-family: var(--font-headline); font-size: 0.95rem; margin-bottom: 0.85rem;">WORKSHOP</h4>
+          <p style="font-size: var(--text-xs); color: #333; line-height: 1.6; margin-bottom: 1rem;">
+            A collaborative initiative focusing on interpersonal agility, active listening, and high-trust group dynamics.
+          </p>
+          <button type="button" id="btn-back-to-top" class="btn-back-to-top">
+            <span>Back to top ↑</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 TEAM CATALYST. All rights reserved.</span>
+        <span>Built with Semantic HTML, CSS & Vanilla JS ES Modules.</span>
+      </div>
+    </footer>
+
+  </div><!-- /.retro-window-shell -->
+
+  <!-- JavaScript ES Modules Entry Point -->
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
