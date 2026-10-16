@@ -1,0 +1,140 @@
+/* ==========================================================================
+   CATALYST — BASE & RESET STYLES
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--lavender);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.4) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(255, 196, 214, 0.5) 0%, transparent 25%);
+  background-attachment: fixed;
+}
+
+/* Body Scroll Lock for Modal */
+body.modal-open {
+  overflow: hidden;
+  padding-right: var(--scrollbar-width, 0px);
+}
+
+/* Subtle Tactile Film Grain Overlay */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9000;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Typography Basics */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.15;
+  font-weight: 900;
+  color: var(--black);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+img, picture, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* High Contrast Focus Ring */
+:focus-visible {
+  outline: 3px solid var(--black) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 5px var(--yellow) !important;
+}
+
+/* Marker Underline Highlight for Core Identity Text */
+.marker-underline {
+  background: linear-gradient(transparent 58%, var(--yellow) 58%, var(--yellow) 94%, transparent 94%);
+  padding: 0 4px;
+  display: inline;
+  font-weight: 700;
+}
+
+/* Retro Desktop Shell Frame (Outer Browser Window) */
+.retro-window-shell {
+  max-width: var(--window-max-width);
+  margin: 1.5rem auto 3rem auto;
+  border: var(--border-heavy);
+  border-radius: var(--radius-window);
+  background-color: var(--pink);
+  box-shadow: var(--shadow-window);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow var(--transition-normal);
+}
+
+@media (max-width: 1400px) {
+  .retro-window-shell {
+    margin: 1rem 1rem 2rem 1rem;
+    border-radius: var(--radius-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .retro-window-shell {
+    margin: 0.5rem 0.5rem 1.5rem 0.5rem;
+    border-width: 3px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,130 @@
+/* ==========================================================================
+   CATALYST — PRINT STYLESHEET
+   Clean 1-Page Resume Printable CV
+   ========================================================================== */
+
+@media print {
+  @page {
+    margin: 1.2cm;
+    size: A4 portrait;
+  }
+
+  /* Reset layout & hide decorative background elements */
+  body {
+    background: #FFFFFF !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .grain-overlay,
+  .social-rail,
+  .section-dots,
+  .sticker,
+  .window-chrome-bar,
+  .hero-section,
+  .about-strip-section,
+  .team-section,
+  .site-footer,
+  .modal-close-btn,
+  .modal-nav-bar,
+  .modal-title-bar,
+  .btn-retro,
+  .card-resume-btn {
+    display: none !important;
+  }
+
+  .retro-window-shell {
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  /* If Modal is Open */
+  .modal-backdrop.is-active {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    display: block !important;
+  }
+
+  .modal-backdrop.is-active .modal-window {
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    transform: none !important;
+    background: transparent !important;
+  }
+
+  .modal-body-scrollable {
+    overflow: visible !important;
+    padding: 0 !important;
+    display: block !important;
+    background: transparent !important;
+  }
+
+  .modal-sidebar {
+    float: left;
+    width: 28%;
+    margin-right: 4%;
+  }
+
+  .modal-photo-frame {
+    aspect-ratio: 4 / 5 !important;
+    border: 2px solid #111 !important;
+    box-shadow: none !important;
+  }
+
+  .modal-contact-box {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    margin-top: 1rem;
+    padding: 0.5rem !important;
+  }
+
+  .modal-main-content {
+    float: right;
+    width: 68%;
+  }
+
+  .modal-section-card {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 1.25rem !important;
+    page-break-inside: avoid;
+  }
+
+  .modal-section-heading {
+    border-bottom: 1.5px solid #111 !important;
+    font-size: 11pt !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .skill-progress-track {
+    border: 1px solid #111 !important;
+    height: 8px !important;
+    box-shadow: none !important;
+  }
+
+  .skill-progress-bar {
+    background: #555 !important;
+  }
+
+  .learning-pill {
+    border: 1px solid #888 !important;
+    background: #f4f4f4 !important;
+    box-shadow: none !important;
+  }
+
+  /* Clear float after modal */
+  .modal-body-scrollable::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

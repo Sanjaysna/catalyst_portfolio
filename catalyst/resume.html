@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | CATALYST</title>
+  <meta name="description" content="View member resume for CATALYST team.">
+  <meta name="theme-color" content="#D0C4FB">
+
+  <!-- Favicon Set from Brand Mark -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32x32.png">
+  <link rel="icon" type="image/x-icon" href="assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon.png">
+
+  <!-- Google Fonts: Bungee, Shrikhand, Damion, Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Damion&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Shrikhand&display=swap" rel="stylesheet">
+
+  <!-- Modular Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css?v=7">
+  <link rel="stylesheet" href="css/base.css?v=7">
+  <link rel="stylesheet" href="css/components.css?v=7">
+  <link rel="stylesheet" href="css/resume.css?v=7">
+</head>
+<body class="resume-page-body">
+
+  <!-- Tactile Film Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- RETRO BROWSER WINDOW SHELL -->
+  <div class="resume-window-shell">
+
+    <!-- Top Window Chrome (Sticky Header) -->
+    <header class="resume-chrome-bar">
+      <!-- Left: Back Button + Window Dots + Brand Mark + Member Name -->
+      <div class="resume-chrome-left">
+        <a href="index.html#team" id="btn-back-team" class="btn-back-team" title="Return to Team Grid [Esc]">
+          <span aria-hidden="true">←</span>
+          <span>Back to Team</span>
+        </a>
+
+        <div class="window-controls-group" style="display: flex; gap: 6px;" aria-hidden="true">
+          <span class="window-dot dot-pink"></span>
+          <span class="window-dot dot-yellow"></span>
+          <span class="window-dot dot-green"></span>
+        </div>
+
+        <a href="index.html" class="nav-brand-badge" style="width: 32px; height: 32px;" title="Go to CATALYST Home">
+          <img src="assets/brand/logo-mark-256.png" srcset="assets/brand/logo-mark-256.png 1x, assets/brand/logo-mark-512.png 2x" alt="CATALYST logo" width="22" height="22" loading="eager" decoding="async">
+        </a>
+
+        <span class="resume-chrome-title" id="resume-chrome-title">CATALYST // Resume</span>
+      </div>
+
+      <!-- Right: Direct Open PDF Link (Hidden for missing resumes) -->
+      <div>
+        <a href="#" id="resume-open-direct" class="resume-open-direct" target="_blank" rel="noopener noreferrer" title="Open original PDF in a new tab">
+          <span>Open PDF</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Resume Viewer / Glitch Screen Container -->
+    <main class="resume-viewer-container" id="resume-viewer-container">
+      <!-- Populated dynamically by js/resume.js -->
+    </main>
+
+  </div><!-- /.resume-window-shell -->
+
+  <!-- PDF.js Pinned CDN (pdfjs-dist@3.11.174) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+  <!-- Dedicated Resume Page Controller -->
+  <script type="module" src="js/resume.js"></script>
+</body>
+</html>

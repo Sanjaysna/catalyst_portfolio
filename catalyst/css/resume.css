@@ -1,0 +1,532 @@
+/* ==========================================================================
+   CATALYST — DEDICATED RESUME PAGE STYLES (resume.css)
+   Clean PDF.js Canvas Viewer & Windows-98 Glitch Screen
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Resume Page Layout & Sticky Window Top Bar
+   -------------------------------------------------------------------------- */
+.resume-page-body {
+  background-color: var(--lavender);
+  min-height: 100vh;
+  padding: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.resume-window-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  border: var(--border-heavy);
+  border-radius: var(--radius-lg);
+  background-color: var(--pink);
+  box-shadow: var(--shadow-window);
+  overflow: hidden;
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sticky Window Chrome Bar */
+.resume-chrome-bar {
+  background-color: var(--lavender);
+  border-bottom: var(--border-heavy);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.resume-chrome-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+
+/* Back Button (Sticker Style) */
+.btn-back-team {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-headline);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  padding: 0.45rem 1rem;
+  border: var(--border-thick);
+  border-radius: var(--radius-pill);
+  background-color: var(--yellow);
+  color: var(--black);
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.btn-back-team:hover {
+  background-color: var(--cyan);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-back-team:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* Member Name in Window Chrome */
+.resume-chrome-title {
+  font-family: var(--font-headline);
+  font-size: var(--text-sm);
+  color: var(--black);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.04em;
+}
+
+/* Chrome Right: Direct PDF Link */
+.resume-open-direct {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.8rem;
+  background-color: var(--white);
+  border: var(--border-sm);
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 0.75rem;
+  box-shadow: 2px 2px 0 var(--black);
+  color: var(--black);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.resume-open-direct:hover {
+  background-color: var(--green);
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Resume Viewer Container (Canvas Stack)
+   -------------------------------------------------------------------------- */
+.resume-viewer-container {
+  flex-grow: 1;
+  padding: clamp(1rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--pink);
+  position: relative;
+  min-height: 600px;
+}
+
+/* Canvas Pages */
+.resume-canvas-page {
+  width: 100% !important;
+  max-width: 860px;
+  height: auto !important;
+  border: var(--border-heavy);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 2rem;
+  background-color: var(--white);
+  display: block;
+  transition: transform var(--transition-fast);
+}
+
+.resume-canvas-page:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Retro Loading Indicator */
+.resume-loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--white);
+  border: var(--border-heavy);
+  border-radius: var(--radius-md);
+  padding: 2rem 2.5rem;
+  box-shadow: var(--shadow-md);
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.resume-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--black);
+  border-top-color: var(--yellow);
+  border-right-color: var(--cyan);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.resume-loading-text {
+  font-family: var(--font-headline);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: var(--black);
+}
+
+/* Fallback Iframe */
+.resume-fallback-iframe {
+  width: 100%;
+  max-width: 900px;
+  height: 85vh;
+  border: var(--border-heavy);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  background-color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   Retro "Glitch / Missing Resume" Screen (Windows-98 Aesthetics)
+   -------------------------------------------------------------------------- */
+.glitch-screen-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 65vh;
+  padding: 1.5rem;
+  position: relative;
+}
+
+/* Scanlines Texture Overlay */
+.glitch-screen-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(17, 17, 17, 0.04) 0px,
+    rgba(17, 17, 17, 0.04) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: 10;
+}
+
+/* Retro Dialog Box */
+.glitch-dialog-box {
+  background-color: var(--white);
+  border: var(--border-heavy);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 580px;
+  overflow: hidden;
+  position: relative;
+  z-index: 20;
+  text-align: center;
+}
+
+/* Dialog Titlebar */
+.glitch-dialog-titlebar {
+  background-color: var(--lavender);
+  border-bottom: var(--border-thick);
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.glitch-titlebar-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--black);
+  background-color: var(--white);
+  box-shadow: 1px 1px 0 var(--black);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.glitch-titlebar-badge img {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+  display: block;
+}
+
+.glitch-dialog-title {
+  font-family: var(--font-headline);
+  font-size: 0.85rem;
+  color: var(--black);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Dialog Body */
+.glitch-dialog-body {
+  padding: clamp(1.75rem, 4vw, 2.75rem) clamp(1.25rem, 3vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  position: relative;
+}
+
+/* Tilted Error Sticker */
+.glitch-status-sticker {
+  display: inline-block;
+  background-color: var(--hot-pink);
+  color: var(--white);
+  border: var(--border-thick);
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 1rem;
+  font-family: var(--font-headline);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  transform: rotate(-6deg);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Glitch Typography (RGB Split) */
+.glitch-headline {
+  font-family: var(--font-headline);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  color: var(--black);
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05em;
+}
+
+.glitch-headline::before,
+.glitch-headline::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: inset(0 0 0 0);
+}
+
+.glitch-headline::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--cyan);
+  animation: glitch-anim-1 3s infinite linear alternate-reverse;
+}
+
+.glitch-headline::after {
+  left: -2px;
+  text-shadow: 2px 0 var(--hot-pink);
+  animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip-path: inset(20% 0 50% 0); transform: skew(0.5deg); }
+  20% { clip-path: inset(60% 0 10% 0); transform: skew(-0.8deg); }
+  40% { clip-path: inset(10% 0 70% 0); transform: skew(0.3deg); }
+  60% { clip-path: inset(80% 0 5% 0); transform: skew(0.6deg); }
+  80% { clip-path: inset(30% 0 40% 0); transform: skew(-0.4deg); }
+  100% { clip-path: inset(15% 0 65% 0); transform: skew(0.2deg); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip-path: inset(10% 0 80% 0); transform: skew(-0.5deg); }
+  25% { clip-path: inset(70% 0 15% 0); transform: skew(0.7deg); }
+  50% { clip-path: inset(25% 0 55% 0); transform: skew(-0.3deg); }
+  75% { clip-path: inset(50% 0 30% 0); transform: skew(0.5deg); }
+  100% { clip-path: inset(5% 0 85% 0); transform: skew(-0.2deg); }
+}
+
+.glitch-subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  font-style: italic;
+  color: var(--black);
+  margin-top: -0.25rem;
+}
+
+.glitch-subtext {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: #333;
+  line-height: 1.5;
+  max-width: 38ch;
+}
+
+/* Windows-98 Chunky Segmented Progress Bar */
+.win98-progress-wrapper {
+  width: 100%;
+  max-width: 380px;
+  margin: 0.5rem 0;
+}
+
+.win98-progress-track {
+  height: 30px;
+  border: 3px solid var(--black);
+  border-radius: 4px;
+  background-color: #E2E2E2;
+  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.35);
+  padding: 3px;
+  display: flex;
+  gap: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.win98-progress-block {
+  width: 14px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--cyan),
+    var(--cyan) 7px,
+    var(--yellow) 7px,
+    var(--yellow) 14px
+  );
+  border: 1px solid var(--black);
+  flex-shrink: 0;
+  animation: blockFlicker 3s infinite;
+}
+
+/* Progress Fill Animation (Stalls at ~75% and loops) */
+.win98-progress-bar-animated {
+  height: 100%;
+  display: flex;
+  gap: 3px;
+  width: 0%;
+  animation: win98StallLoop 4s cubic-bezier(0.1, 0.7, 0.1, 1) infinite;
+}
+
+@keyframes win98StallLoop {
+  0% { width: 0%; }
+  20% { width: 35%; }
+  45% { width: 60%; }
+  65% { width: 75%; }
+  85% { width: 78%; }
+  92% { width: 75%; }
+  100% { width: 0%; }
+}
+
+@keyframes blockFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+/* Floating Retro Pixel Cursor on Dialog */
+.glitch-cursor-sticker {
+  position: absolute;
+  bottom: 12px;
+  right: 18px;
+  width: 28px;
+  height: 34px;
+  filter: drop-shadow(2px 2px 0 var(--black));
+  animation: cursorJiggle 3s ease-in-out infinite;
+}
+
+@keyframes cursorJiggle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(6deg); }
+}
+
+/* Screen Reader Status Announcement */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Responsive Adjustments (<640px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .resume-page-body {
+    padding: 0.25rem;
+  }
+  .resume-window-shell {
+    border-radius: var(--radius-sm);
+    box-shadow: 6px 6px 0 var(--black);
+  }
+  .resume-chrome-bar {
+    padding: 0.6rem 0.75rem;
+    gap: 0.5rem;
+  }
+  .resume-chrome-left {
+    gap: 0.5rem;
+  }
+  .resume-chrome-title {
+    font-size: 0.75rem;
+    max-width: 130px;
+  }
+  .btn-back-team {
+    font-size: 0.68rem;
+    padding: 0.35rem 0.65rem;
+  }
+  .resume-open-direct {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.55rem;
+  }
+  .resume-viewer-container {
+    padding: 0.75rem 0.35rem;
+  }
+  .resume-canvas-page {
+    border-width: 2px;
+    box-shadow: 4px 4px 0 var(--black);
+    margin-bottom: 1.25rem;
+  }
+  .glitch-dialog-box {
+    margin: 0.5rem;
+  }
+  .glitch-dialog-body {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+  .glitch-headline {
+    font-size: 1.8rem;
+  }
+  .glitch-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion Accessibility
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .glitch-headline::before,
+  .glitch-headline::after {
+    animation: none !important;
+    display: none !important;
+  }
+  .win98-progress-bar-animated {
+    animation: none !important;
+    width: 75% !important;
+  }
+  .glitch-cursor-sticker {
+    animation: none !important;
+  }
+  .resume-loading-spinner {
+    animation: none !important;
+  }
+}
